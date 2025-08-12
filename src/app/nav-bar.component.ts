@@ -10,23 +10,29 @@ import { Component } from "@angular/core";
     </div>`,
     styles: `.nav-bar {
         width: 100%;
-        height: 30px;
-        padding: 10px;
+        height: 46px;
         background-color: skyblue;
         color: #000;
         display: flex;
-
-        .nav-btn {
-            padding: 10px;
-            border: 2px solid #000;
+        padding: 16px 32px;
+        text-align: center;
+        font-size: 16px;
+        margin: 4px;
         }
 
-        .nav-btn: hover {
+        .nav-btn {
+            padding: 10px 10px 10px 10px;
+            border: 2px solid #000;
+            padding: 16px 32px;
+            text-align: center;
+            margin: 4px;
+        }
+
+        .nav-btn:hover {
             cursor: pointer;
             background-color: #04AA6D;
             color: white;
-        }
-    }`,
+        }`,
     standalone: true,
 })
 export class NavBarComponent{
