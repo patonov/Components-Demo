@@ -14,6 +14,8 @@ import { Component } from "@angular/core";
         background-color: skyblue;
         color: #000;
         display: flex;
+        justify-content: center;
+        align-items: center;
         padding: 16px 32px;
         text-align: center;
         font-size: 16px;
