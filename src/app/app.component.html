@@ -1,6 +1,18 @@
 <app-nav-bar />
 <div><p>I am Nikolay and I am crazy about Angular!</p></div>
+<app-users-list />
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nobis illo expedita sint repudiandae dolorum totam, accusamus porro harum asperiores exercitationem ipsa laborum sequi obcaecati consectetur hic excepturi iusto deleniti!</p>
+
+<div id="number-wraper">
+    @for (n of numbers; track $index) {
+        @if (n % 2 === 0) {
+            <div class="num blue"> {{ n }}</div>
+        } @else {
+            <div class="num red"> {{ n }}</div>
+        }
+    }
+</div>
+
 <app-footer />
 
 <router-outlet />
