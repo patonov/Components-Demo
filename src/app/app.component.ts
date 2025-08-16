@@ -15,4 +15,20 @@ export class AppComponent {
   title = 'Components-Demo';
 
   numbers = [ 1, 2, 3, 4, 5 ];
+
+  siteUsers = [
+        { name: 'Pesho', age: 22 },
+        { name: 'Ivan', age: 29 },
+        { name: 'Mitko', age: 32 },
+        { name: 'Umar', age: 38 },
+    ];
+
+  handleClick(){
+    this.title = 'Здравей, брато!';
+  }
+
+  addUser(inputName: HTMLInputElement, inputAge: HTMLInputElement){
+    const newCommer = { name: inputName.value, age: Number(inputAge.value) };
+    this.siteUsers.push(newCommer);
+  }
 }
