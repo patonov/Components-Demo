@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NavBarComponent } from './nav-bar.component';
 import { FooterComponent } from "./footer.component";
@@ -11,7 +11,7 @@ import { UsersListComponent } from './users-list.component';
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'Components-Demo';
 
   numbers = [ 1, 2, 3, 4, 5 ];
@@ -31,4 +31,16 @@ export class AppComponent {
     const newCommer = { name: inputName.value, age: Number(inputAge.value) };
     this.siteUsers.push(newCommer);
   }
+
+  counter = signal(0);
+
+  ngOnInit(): void {
+    console.log(`Counter: ${this.counter()}`);
+  }
+
+  increment(){
+    const value = this.counter() + 1;
+
+    this.counter.set(value);
+  }  
 }
