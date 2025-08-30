@@ -1,12 +1,13 @@
 import { Component } from "@angular/core";
+import { RouterLink } from "@angular/router";
 
 @Component({
     selector: 'app-nav-bar',
     template: `<div class="nav-bar">
         <div>{{ title }}</div>
-        <div class="nav-btn">Home</div>
-        <div class="nav-btn">About</div>
-        <div class="nav-btn">Contacts</div>
+        <div class="nav-btn" routerLink="/">Home</div>
+        <div class="nav-btn" routerLink="/about">About</div>
+        <div class="nav-btn" routerLink="/contacts">Contacts</div>
     </div>`,
     styles: `.nav-bar {
         width: 100%;
@@ -36,6 +37,7 @@ import { Component } from "@angular/core";
             color: white;
         }`,
     standalone: true,
+    imports: [RouterLink],
 })
 export class NavBarComponent{
     title: string = 'My Navigation Bar Component';

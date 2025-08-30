@@ -1,7 +1,8 @@
-<app-nav-bar />
+<app-navigation-bar />
 <h1>Hello, {{ title }}</h1>
 <button (click)="handleClick()">Click</button>
 <div><p>I am Nikolay and I am crazy about Angular!</p></div>
+<app-home />
 <!-- <app-users-list />
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus, nobis illo expedita sint repudiandae dolorum totam, accusamus porro harum asperiores exercitationem ipsa laborum sequi obcaecati consectetur hic excepturi iusto deleniti!</p>
 -->
@@ -26,9 +27,7 @@
 <input type="text" placeholder="age" #inputAge/>
 <button (click)="addUser(inputName, inputAge)">Add User</button>
 
-<div>Hello from counter {{ counter() }}</div>
-<button (click)="increment()">Increment</button>
-
+<app-wrapper />
 <app-footer />
 
 <router-outlet />
