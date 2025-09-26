@@ -4,7 +4,8 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { UsersListComponent } from './users-list.component';
 
 export const routes: Routes = [
-    { path: "", component: HomeComponent },
+    { path: "", redirectTo: "/home", pathMatch: "full" },
+    { path: 'home', component: HomeComponent },
     { path: 'about', component: WrapperComponent },
     { path: 'contacts', component: UsersListComponent}
 ];
