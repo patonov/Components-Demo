@@ -1,1 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+.highlights {
+    font-size: large;
+    color: blue;
+    font-weight: bold;
+}
