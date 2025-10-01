@@ -17,12 +17,12 @@ export class HighLightDirective implements OnInit, OnDestroy {
         this.renderer.listen(this.elRef.nativeElement, 'mouseleave', this.mouseLeaveHandler.bind(this));
     }
 
-    mouseEventHandler() {
+    mouseEventHandler(e: MouseEvent) {
       this.renderer.setStyle(this.elRef.nativeElement, 'background', 'green');  
       this.renderer.addClass(this.elRef.nativeElement, 'highlights');
     }
 
-    mouseLeaveHandler(){
+    mouseLeaveHandler(e: MouseEvent){
         this.renderer.setStyle(this.elRef.nativeElement, 'background', 'pink');
         this.renderer.removeClass(this.elRef.nativeElement, 'highlights');
     }
