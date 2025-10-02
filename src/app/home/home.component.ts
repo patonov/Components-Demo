@@ -2,13 +2,15 @@ import { Component } from '@angular/core';
 import { HighLightDirective } from '../directives/highlight.directive';
 import { RouterLink } from '@angular/router';
 import { MyRouterLinkDirective } from "../directives/my-router-link.directive";
+import { NgStyle } from "@angular/common";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HighLightDirective, 
+  imports: [HighLightDirective,
     //RouterLink, 
-    MyRouterLinkDirective],
+    MyRouterLinkDirective, 
+    NgStyle],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
