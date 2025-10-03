@@ -1,7 +1,7 @@
 import { Directive, ElementRef, OnDestroy, OnInit, Renderer2 } from "@angular/core";
 
 @Directive({
-    selector: '[app-highlight]',
+    selector: '[appHighlight]',
     standalone: true
 })
 export class HighLightDirective implements OnInit, OnDestroy {

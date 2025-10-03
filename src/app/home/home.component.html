@@ -1,4 +1,4 @@
-<p app-highlight>home works!</p>
+<p appHighlight>home works!</p>
 
 <hr />
 
@@ -8,4 +8,21 @@
 <div appMyRouterLink="/login">Go to Login page</div>
 <div appMyRouterLink="/register">Go to Register page</div>
 
-<div [ngStyle]="{ background: 'red', width: '400px' }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita provident reprehenderit ut sint quae possimus quia modi cumque fugit aperiam fuga, ratione dolore blanditiis porro totam minima ea culpa rem?</div>
+<div [ngStyle]="{ background: 'red', width: widthInPercent }">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita provident reprehenderit ut sint quae possimus quia modi cumque fugit aperiam fuga, ratione dolore blanditiis porro totam minima ea culpa rem? {{ randomPercentage }}%</div>
+<p [ngClass]="{ appHighlight: true }">Lorem yuhuuu</p>
+
+<div *ngIf="false">
+    <div>Struct Dir One</div>
+    <div>Struct Dir Two</div>
+</div>
+
+<ng-template [ngIf]="true">
+    <div>
+        <div>Template One</div>
+        <div>Template Two</div>
+    </div>
+</ng-template>
+
+<ul>
+    <li *ngFor="let item of [1, 2, 3, 4]">{{ item }}</li>
+</ul>
