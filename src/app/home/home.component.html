@@ -26,3 +26,6 @@
 <ul>
     <li *ngFor="let item of [1, 2, 3, 4]">{{ item }}</li>
 </ul>
+
+<button (click)="toggleIsShown()">Show</button>
+<div *appMyStructural="isShown">Meow</div>

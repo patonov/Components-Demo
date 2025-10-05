@@ -3,6 +3,7 @@ import { HighLightDirective } from '../directives/highlight.directive';
 import { RouterLink } from '@angular/router';
 import { MyRouterLinkDirective } from "../directives/my-router-link.directive";
 import { CommonModule, NgClass, NgStyle } from "@angular/common";
+import { MyStructuralDirective } from '../directives/my-structural.directive';
 
 
 @Component({
@@ -13,7 +14,8 @@ import { CommonModule, NgClass, NgStyle } from "@angular/common";
     MyRouterLinkDirective,
     CommonModule,
     NgStyle,
-    NgClass
+    NgClass,
+    MyStructuralDirective
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -23,4 +25,10 @@ export class HomeComponent {
     widthInPercent = `${this.randomPercentage}%`;
 
     isPercentageAbove50 = this.randomPercentage >= 50;
+
+    isShown = true;
+
+    toggleIsShown() {
+      this.isShown = !this.isShown;
+    }
 }
