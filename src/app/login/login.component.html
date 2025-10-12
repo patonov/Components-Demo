@@ -30,9 +30,13 @@
             id="password" 
             name="password" 
             ngModel 
-            #passwordInput="ngModel">
+            #passwordInput="ngModel"
+            [appMaxLength]="passWordMaxLength">
         </div>
 
+        @if (passwordInput.errors?.['appMaxLength']) {
+        <div style="color: red;">Password must be longer than {{ passWordMaxLength }} characters.</div>
+        }
         <button>Login</button>
     </form>
 </div>

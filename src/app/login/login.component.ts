@@ -1,10 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
 import { FormsModule, NgForm, NgModel } from '@angular/forms';
+import { MaxLengthDirective } from '../directives/max-length.directive';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule, MaxLengthDirective],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css'
 })
@@ -16,4 +17,5 @@ export class LoginComponent {
     console.log(this.form);
   }
 
+  passWordMaxLength = 4;
 }
