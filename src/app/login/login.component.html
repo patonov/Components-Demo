@@ -31,8 +31,13 @@
             name="password" 
             ngModel 
             #passwordInput="ngModel"
-            [appMaxLength]="passWordMaxLength">
+            [appMaxLength]="passWordMaxLength"
+            minlength="2">
         </div>
+
+        @if (passwordInput.errors?.['minlength']) {
+        <div style="color: red;">Password must be shorter than 2 characters.</div>
+        }
 
         @if (passwordInput.errors?.['appMaxLength']) {
         <div style="color: red;">Password must be longer than {{ passWordMaxLength }} characters.</div>

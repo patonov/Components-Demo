@@ -15,6 +15,7 @@ export class LoginComponent {
   formSubmitHandler(){
     console.log('Form is submitted.');
     console.log(this.form);
+    this.form?.reset();
   }
 
   passWordMaxLength = 4;
