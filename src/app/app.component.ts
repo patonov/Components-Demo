@@ -6,11 +6,15 @@ import { UsersListComponent } from './users-list.component';
 import { WrapperComponent } from './wrapper/wrapper.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
+import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, 
+            CommonModule,
+            //LowerCasePipe,
+            //UpperCasePipe,
             // NavBarComponent 
             FooterComponent, 
             UsersListComponent,
@@ -53,4 +57,6 @@ export class AppComponent implements OnInit{
 
     this.counter.set(value);
   }  
+
+  user = { name: 'Petko', age: 23, grades: [3, 2, 3, 3, 4, 2] };
 }

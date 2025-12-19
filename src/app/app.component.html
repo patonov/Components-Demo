@@ -1,6 +1,13 @@
 <app-navigation-bar />
-<!-- <h1>Hello, {{ title }}</h1>
-<button (click)="handleClick()">Click</button>
+
+<h1>Hello, {{ title | lowercase }}</h1>
+<h1>Hello, {{ title | uppercase }}</h1>
+
+<div>
+    {{ user | json | lowercase }}
+</div>
+
+<!-- <button (click)="handleClick()">Click</button>
 <div><p>I am Nikolay and I am crazy about Angular!</p></div>
 <app-home />
 <app-users-list />
