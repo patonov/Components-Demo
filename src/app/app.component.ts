@@ -7,6 +7,7 @@ import { WrapperComponent } from './wrapper/wrapper.component';
 import { NavigationBarComponent } from './navigation-bar/navigation-bar.component';
 import { HomeComponent } from './home/home.component';
 import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
+import { interval, map } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -59,4 +60,12 @@ export class AppComponent implements OnInit{
   }  
 
   user = { name: 'Petko', age: 23, grades: [3, 2, 3, 3, 4, 2] };
+
+  addProperty(){
+    (this.user as any).aaa = 'test 1 2 3';
+    this.user.grades.push(-4);
+    this.user.grades = [...this.user.grades, -5];
+  }
+
+  time$ = interval(1000).pipe(map(() => new Date()));
 }

@@ -7,6 +7,14 @@
     {{ user | json | lowercase }}
 </div>
 
+<button (click)="addProperty()">
+    Add Property
+</button>
+
+<div>
+    Clock: {{ time$ | async | date }}
+</div>
+
 <!-- <button (click)="handleClick()">Click</button>
 <div><p>I am Nikolay and I am crazy about Angular!</p></div>
 <app-home />
