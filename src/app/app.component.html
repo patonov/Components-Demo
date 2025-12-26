@@ -12,7 +12,11 @@
 </button>
 
 <div>
-    Clock: {{ time$ | async | date }}
+    Clock: {{ time$ | async | date : 'hh:mm:ss' }}
+</div>
+
+<div>
+    {{ user.grades | reduce : sum : 0}}
 </div>
 
 <!-- <button (click)="handleClick()">Click</button>

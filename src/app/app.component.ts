@@ -8,12 +8,14 @@ import { NavigationBarComponent } from './navigation-bar/navigation-bar.componen
 import { HomeComponent } from './home/home.component';
 import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { interval, map } from 'rxjs';
+import { ReducePipe } from './reduce.pipe';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, 
             CommonModule,
+            ReducePipe,
             //LowerCasePipe,
             //UpperCasePipe,
             // NavBarComponent 
@@ -60,6 +62,10 @@ export class AppComponent implements OnInit{
   }  
 
   user = { name: 'Petko', age: 23, grades: [3, 2, 3, 3, 4, 2] };
+
+  sum(acc: number, curr: number): number {
+    return acc + curr;
+  }
 
   addProperty(){
     (this.user as any).aaa = 'test 1 2 3';
