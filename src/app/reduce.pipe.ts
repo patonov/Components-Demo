@@ -6,10 +6,9 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class ReducePipe<T> implements PipeTransform {
 
-  transform(array: T[], callBackFn: (acc: unknown, curr: unknown) 
-  => unknown, initialValue: T): unknown {
+  transform(array: T[], callBackFn: (acc: T, curr: T) 
+  => T, initialValue: T): T {
     return array.reduce(callBackFn, initialValue);
   }
-
 
 }
