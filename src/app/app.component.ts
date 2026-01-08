@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { interval, map } from 'rxjs';
 import { ReducePipe } from './reduce.pipe';
+import { LanguagePipe } from './language.pipe';
 
 @Component({
   selector: 'app-root',
@@ -16,6 +17,7 @@ import { ReducePipe } from './reduce.pipe';
   imports: [RouterOutlet, 
             CommonModule,
             ReducePipe,
+            LanguagePipe,
             //LowerCasePipe,
             //UpperCasePipe,
             // NavBarComponent 
