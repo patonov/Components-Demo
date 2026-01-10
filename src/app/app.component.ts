@@ -10,6 +10,7 @@ import { CommonModule, LowerCasePipe, UpperCasePipe } from '@angular/common';
 import { interval, map } from 'rxjs';
 import { ReducePipe } from './reduce.pipe';
 import { LanguagePipe } from './language.pipe';
+import { UserService } from './user.service';
 
 @Component({
   selector: 'app-root',
@@ -31,6 +32,9 @@ import { LanguagePipe } from './language.pipe';
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit{
+  
+  constructor(private userService: UserService){}
+  
   title = 'Components-Demo';
 
   numbers = [ 1, 2, 3, 4, 5 ];
@@ -76,4 +80,8 @@ export class AppComponent implements OnInit{
   }
 
   time$ = interval(1000).pipe(map(() => new Date()));
+
+  loadUsers(){
+    this.userService.loadUsers();
+  }
 }
