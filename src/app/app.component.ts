@@ -11,6 +11,7 @@ import { interval, map } from 'rxjs';
 import { ReducePipe } from './reduce.pipe';
 import { LanguagePipe } from './language.pipe';
 import { UserService } from './user.service';
+import { httpInterceptor } from './http.interceptor';
 
 @Component({
   selector: 'app-root',
@@ -28,6 +29,7 @@ import { UserService } from './user.service';
             NavigationBarComponent,
             HomeComponent
           ],
+  providers: [httpInterceptor],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
