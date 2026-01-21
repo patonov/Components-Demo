@@ -29,7 +29,7 @@ import { httpInterceptor } from './http.interceptor';
             NavigationBarComponent,
             HomeComponent
           ],
-  providers: [httpInterceptor],
+  providers: [],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,22 +1,26 @@
-// import { HttpInterceptorFn } from '@angular/common/http';
+import { HttpInterceptorFn } from "@angular/common/http";
+import { API_URL } from "./constants";
 
-import { HTTP_INTERCEPTORS, HttpHandler, HttpRequest } from "@angular/common/http";
-import { Injectable, Provider } from "@angular/core";
-import { Observable } from "rxjs";
-
-// export const httpInterceptor: HttpInterceptorFn = (req, next) => {
-//   return next(req);
-// };
-
-@Injectable()
-export class HttpInterceptor implements HttpInterceptor {
-  intercept(req: HttpRequest<any>, next: HttpHandler) {
-    return next.handle(req);
+export const httpInterceptor: HttpInterceptorFn = (req, next) => {
+  if (req.url.startsWith('/api')){
+    req = req.clone({
+      url: req.url.replace('/api', API_URL)
+    });
   }
-}
-
-export const httpInterceptor: Provider = {
-  multi: true,
-  useClass: HttpInterceptor,
-  provide: HTTP_INTERCEPTORS,
+  
+  return next(req);
 };
+
+// @Injectable()
+// export class HttpInterceptor implements HttpInterceptor {
+//   intercept(req: HttpRequest<any>, next: HttpHandler) {
+//     //return next.handle(req);
+//     return null;
+//   }
+// }
+
+// export const httpInterceptor: Provider = {
+//   multi: true,
+//   useClass: HttpInterceptor,
+//   provide: HTTP_INTERCEPTORS,
+// };
