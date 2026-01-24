@@ -9,10 +9,10 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loadUsers(){
-    this.http.get('/api/users')
-    .subscribe((users) =>
-    {
-      console.log({users});
+    this.http.get('https://jsonplaceholder.typicode.com/users')
+    //.get('/api/users')
+    .subscribe((users) => {
+      console.log({ users });
     });
   }
 }

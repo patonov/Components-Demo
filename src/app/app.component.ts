@@ -27,7 +27,7 @@ import { httpInterceptor } from './http.interceptor';
             UsersListComponent,
             WrapperComponent,
             NavigationBarComponent,
-            HomeComponent
+            HomeComponent,
           ],
   providers: [],
   templateUrl: './app.component.html',
