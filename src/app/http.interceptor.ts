@@ -1,6 +1,6 @@
 import { HttpInterceptorFn, HttpRequest } from "@angular/common/http";
 import { API_URL } from "./constants";
-import { catchError, tap } from "rxjs";
+import { catchError, EMPTY, tap } from "rxjs";
 
 export const httpInterceptor: HttpInterceptorFn = (req, next) => {
   //debugger;
@@ -15,11 +15,15 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
       if (req instanceof HttpRequest){
         console.log(req);
       }
-    }, catchError((err) => {
-      console.log(err?.status);
+    }),
+    catchError((err) => {
+      if (err.status === 404){
+        return EMPTY;
+      }
+      
+      //console.log(err?.status);
       return [err];
     })
-  )
   )
 };
 

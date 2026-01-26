@@ -10,7 +10,7 @@ export class UserService {
 
   loadUsers(){
     this.http.get('https://jsonplaceholder.typicode.com/users')
-    //.get('/api/users')
+    //this.http.get('/api/users')
     .subscribe((users) => {
       console.log({ users });
     });
