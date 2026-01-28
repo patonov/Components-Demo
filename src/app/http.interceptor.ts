@@ -18,6 +18,7 @@ export const httpInterceptor: HttpInterceptorFn = (req, next) => {
     }),
     catchError((err) => {
       if (err.status === 404){
+        console.error('Error from interceptor', err);
         return EMPTY;
       }
       
